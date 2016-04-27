@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>LinkedIn - 1312590</title>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="with=device-width,initial-scale=1"></meta>
+	<!-- Style -->
+	<link rel="stylesheet" href="style/bootstrap.min.css">
+	<link rel="stylesheet" href="style/index.css">
+</head>
+<body ng-app="app" ng-controller="ProfileController as vm">
+	
+	<!-- ACCOUNT -->
+	<div class="container profile">
+		<div class="profile-overall" >
+			<div class="profile-overall-picture">
+				<img src="img/profilepic.jpg" alt="avatar">
+			</div>	
+			<div class="profile-overall-sumary">
+				<div class="profile-overall-sumery-content">
+					<h3>{{vm.account.name}}</h3>
+					<h3><small>{{vm.account.position}} at {{vm.account.company}}</small></h3>
+					<h4><small>{{vm.account.nation}} | {{vm.account.job}}</small></h4>
+					<table id="tableacc">
+						<tr>
+							<td>Current </td>
+							<td>{{vm.account.current}}</td>
+						</tr>
+						<tr>
+							<td>Previous </td>						
+							<td>{{vm.account.previous}}</td>	
+						</tr>
+						<tr>
+							<td>Education </td>
+							<td>{{vm.account.education}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="profile-overall-extra">
+				<div class="profile-overall-extra-content" ng-hide="vm.isHide">
+					<p>Twitter</p>
+					<p>Websites</p>
+				</div>
+				<div class="profile-overall-extra-action">
+					<span id="linkcontact">https://www.linkedin.com/in/jeffweiner08</span>
+					<div class="btn btn-primary contact-info" ng-click="vm.hide()"><a href="#">Contact Info</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- BACKGROUND -->
+	<div class="row">
+            <div id="profile" class="container">
+                <!--Background-->
+                <div class="card-body">
+                    <h2 class="card-title">Background</h2>
+                    <div id="background-content" class="card-content">
+                        <!--Summary-->
+                        <div class="background-section">
+                            <div class="valign-wrapper background-section-header">
+                                <img src=".\img\header-summary.png" class="valign" />
+                                <h3 class="valign">Summary</h3>
+                            </div>
+                            <p class="description">{{vm.summary}}</p>
+                        </div>
+                        <!--Experience-->
+                        <div class="background-section">
+                            <div class="valign-wrapper background-section-header">
+                                <img src=".\img\header-experience.png" class="valign" />
+                                <h3 class="valign">Experience</h3>
+                            </div>
+                 
+                        </div>
+                        <!--Skills-->
+                        <div class="background-section">
+                            <div class="valign-wrapper background-section-header">
+                                <img src=".\img\header-skill.png" class="valign" />
+                                <h3 class="valign">skills</h3>
+                            </div>
+                            <div id="skills-section">
+                                <div>
+                                    <h5>Top Skills</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!--EDUCATION SECTION-->
+                        <div class="background-section background-last-section">
+                            <div class="valign-wrapper background-section-header">
+                                <img src=".\img\header-education.png" class="valign" />
+                                <h3 class="valign">Education</h3>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	
+	<!-- Script -->
+	<script src="scripts/angular.min.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/profile.module.js"></script>
+	<script src="scripts/profile.controller.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+.profile{
+    border: 1px solid black;
+}
+
+.profile-overall-picture {
+    float: left;
+    width: 240px !important;
+    height: 240px !important;
+}
+
+.profile-overall-picture img {
+    width: 240px !important;
+    height: 240px !important;
+}
+
+.profile-overall-sumary {
+    overflow: hidden;
+    height: 240px;
+    padding: 25px 40px;
+}
+
+.profile-overall-extra-action span {
+    float: left;
+    display: table-cell;
+}
+
+.profile-overall-extra-action contact-info {
+    overflow: hidden;
+    display: table-cell;
+}
+
+#linkcontact:hover{
+    color: rgb(0,115,178);
+}
+
+#tableacc tr td{
+   padding-right: 20px;  
+}
+
+.valign{
+    display: inline-block;
+}
