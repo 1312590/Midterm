@@ -45,7 +45,7 @@
 
 .position{
     position: absolute;
-    
+ 
 }
 
 .edit-form {
@@ -61,6 +61,8 @@
 
 .input-form {
     color: black;
+    display: block;
+    width: 500px;
 }
 
 #skill1{
@@ -107,4 +109,8 @@
 
 .row{
     margin-top: 50px;
+}
+
+.container{
+    border: 1px solid black;
 }
