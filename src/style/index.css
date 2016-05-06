@@ -19,14 +19,11 @@
     padding: 25px 40px;
 }
 
-.profile-overall-extra-action span {
-    float: left;
-    display: table-cell;
+.profile-overall-sumery-content {
+    margin-bottom:25px;
 }
-
-.profile-overall-extra-action contact-info {
-    overflow: hidden;
-    display: table-cell;
+.profile-overall-sumery-content h3 {
+    margin: 2px;
 }
 
 #linkcontact:hover{
@@ -37,6 +34,77 @@
    padding-right: 20px;  
 }
 
-.valign{
+.valign {
     display: inline-block;
+    margin-bottom:20px;
+}
+
+.valign-form{
+    display: inline-block;
+}
+
+.position{
+    position: absolute;
+    
+}
+
+.edit-form {
+    cursor: pointer;
+}
+
+.border-form {
+    color:white;
+    font-weight: bold;
+    background-color: black;
+    border: 1px solid black;
+}
+
+.input-form {
+    color: black;
+}
+
+#skill1{
+    background-color: #0073b2;
+    border-bottom-color: #0073b2;
+    text-decoration: none;
+    color: white;
+    min-width: 18px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-weight: bold;
+}
+
+#skill1:hover{
+    background-color: #333;
+    cursor: pointer;
+}
+
+#skill2{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-size: 13px;
+    color: #333;
+    font-weight: normal;
+    background-color: #f0f0f0;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-decoration: none;
+}
+
+#skill2:hover{
+    color:#0073b2;
+    cursor:pointer;
+}
+
+.right {
+    float: right;
+}
+
+.row{
+    margin-top: 50px;
 }

@@ -10,5 +10,101 @@
         "education":"  University of Pennsylvania - The Wharton School"
     },
     
-    "summary": "Internet executive with over 20 years of experience, including general management of mid to large size organizations, corporate development, product development, business operations, and strategy.urrently CEO at LinkedIn, the web's largest and most powerful network of professionals. Prior to LinkedIn, was an Executive in Residence at Accel Partners and Greylock Partners. Primarily focused on advising the leadership teams of the firm's existing consumer technology portfolio companies while also working closely with the firm’s partners to evaluate new investment opportunities.Previously served in key leadership roles at Yahoo! for over seven years, most recently as the Executive Vice President of Yahoo!'s Network Division managing Yahoo's consumer web product portfolio, including Yahoo's Front Page, Mail, Search, and Media products.Specialties: general management, corporate development, product development, business operations, strategy, product marketing, non-profit governance"
+    "summary": "Internet executive with over 20 years of experience, including general management of mid to large size organizations, corporate development, product development, business operations, and strategy.urrently CEO at LinkedIn, the web's largest and most powerful network of professionals. Prior to LinkedIn, was an Executive in Residence at Accel Partners and Greylock Partners. Primarily focused on advising the leadership teams of the firm's existing consumer technology portfolio companies while also working closely with the firm’s partners to evaluate new investment opportunities.Previously served in key leadership roles at Yahoo! for over seven years, most recently as the Executive Vice President of Yahoo!'s Network Division managing Yahoo's consumer web product portfolio, including Yahoo's Front Page, Mail, Search, and Media products.Specialties: general management, corporate development, product development, business operations, strategy, product marketing, non-profit governance",
+    
+    "project": [
+        {
+            "name": "My Paint",
+            "school": "University of Science",
+            "time": "1 January - 8 February", 
+            "duration": "1 month 7 days",
+            "description": "A tools like MS Paint of Microsoft."
+        },
+        
+        {
+            "name": "My Calculator",
+            "school": "University of Science",
+            "time": "2 July - 2 September", 
+            "duration": "2 months",
+            "description": "A true calculator."
+        }
+    ],
+    
+    "experience": [
+        {
+            "position": "CEO",
+            "company": "LinkedIn",
+            "time": "December 2008 - Present",
+            "duration": "7 years 6 months",
+            "location": "",
+            "description":"Connecting the world's professionals to make them more productive and successful. Since joining the company in December 2008, LinkedIn has expanded its global platform to 23 languages and more than 30 offices around the world, grown its membership base from 33M to more than 347M, and increased its revenue from $78M to over $2.2B in 2014. "
+        },
+
+        {
+            "position": "Member, Board of Directors",
+            "company": "Intuit",
+            "time": "April 2012 - Present",
+            "duration": "4 years 2 months",
+            "location": "Mountain View, CA",
+            "description":"With revenue of $4B+ and approximately 8,000 employees, Intuit is a leading provider of innovative business and financial management solutions for small and medium-sized businesses, consumers, accounting professionals and financial institutions."
+        },
+
+        {   
+            "position": "Member, Board of Directors",
+            "company": "DonorsChoose",
+            "time": "2007 - Present",
+            "duration": "9 years",
+            "location": "",
+            "description":"One of the web's leading philanthropic marketplaces, designed to enable teachers to upload classroom projects in need of funding, and for anyone to select and fund a project."
+        },
+
+           {   
+            "position": "Member, Advisory Board",
+            "company": "Boys & Girls Clubs of the Peninsula",
+            "time": "2011 - Present",
+            "duration": "5 years",
+            "location": "San Francisco Bay Area",
+            "description":"BGCP’s mission is to help its members develop the academic and life skills they need to complete high school ready for college and career."
+        }
+        ],
+
+    "skills": [
+        {
+            "attribute": "99+",
+            "name": "Business Strategy"
+        },
+
+        {
+            "attribute": "99+",
+            "name": "Leadership"
+        },
+
+        {
+            "attribute": "99+",
+            "name": "Strategy"
+        },
+
+        {
+            "attribute": "99+",
+            "name": "Entrepreneurship"
+        },
+
+        {
+            "attribute": "99+",
+            "name": "Product Marketing"
+        },
+
+         {
+            "attribute": "99+",
+            "name": "Strategic Planning"
+        }
+    ],
+
+    "education": [
+        {
+            "school": "University of Pennsylvania - The Wharton School",
+            "position": "Bachelor of Science, Economics",
+            "time": "1988 - June 1992"
+        }
+    ]
 }
