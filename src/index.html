@@ -37,7 +37,7 @@
 						</tr>
 					</table>
 					
-					<img class="valign-form edit-form" src=".\img\edit-button.png" ng-click="vm.editaccount()" />
+					<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editaccount()" />
 								
 								<div class="valign-form border-form position" ng-show="vm.show===1"> 
 									<p class="valign-form">Account:</p>
@@ -65,13 +65,13 @@
                         <!--Summary-->
                         <div class="background-section">
                             <div class="valign-wrapper background-section-header">
-                                <img src=".\img\header-summary.png" class="valign" />
+                                <img src="img/header-summary.png" class="valign" />
                                 <h2 class="valign">Summary</h2>
                             </div>
 							
                             <p class="description valign-form">{{vm.summary}}</p>
 							
-							<img class="valign-form edit-form"  src=".\img\edit-button.png" ng-click="vm.editsummary()" />
+							<img class="valign-form edit-form"  src="img/edit-button.png" ng-click="vm.editsummary()" />
 					
 							<div class="valign-form border-form" ng-show="vm.show1===1"> 
 								<p class="valign-form">Summary:</p>
@@ -82,7 +82,7 @@
 						<!--Project-->
 						 <div class="background-section">
                             <div class="valign-wrapper background-section-header">
-                                <img src=".\img\project.png" class="valign" />
+                                <img src="img/Project.png" class="valign" />
                                 <h2 class="valign">Project</h2>
                             </div>
 							
@@ -92,7 +92,7 @@
 								<h4><small>{{pro.time}} ({{pro.duration}}) </small></h4>
 								<p>{{pro.description}}</p>
 								
-								<img class="valign-form edit-form" src=".\img\edit-button.png" ng-click="vm.editproject()" />
+								<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editproject()" />
 								
 								<div class="valign-form border-form" ng-show="vm.show2===1"> 
 									<p class="valign-form">Project:</p>
@@ -110,7 +110,7 @@
                         <!--Experience-->
                         <div class="background-section">
                             <div class="valign-wrapper background-section-header">
-                                <img src=".\img\header-experience.png" class="valign" />
+                                <img src="img/header-experience.png" class="valign" />
                                 <h2 class="valign">Experience</h2>
                             </div>
 							
@@ -120,7 +120,7 @@
 								<h4><small>{{exp.time}} ({{exp.duration}}) | {{exp.location}}</small></h4>
 								<p>{{exp.description}}</p>
 								
-								<img class="valign-form edit-form" src=".\img\edit-button.png" ng-click="vm.editexperience()" />
+								<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editexperience()" />
 					
 							<div class="valign-form border-form" ng-show="vm.show3===1"> 
 								<p class="valign-form">Experience:</p>
@@ -137,7 +137,7 @@
                         <!--Skills-->
                         <div class="background-section">
                             <div class="valign-wrapper background-section-header">
-                                <img src=".\img\header-skill.png" class="valign" />
+                                <img src="img/header-skill.png" class="valign" />
                                 <h2 class="valign">Skills</h2>
                             </div>
                             <div id="skills-section">
@@ -147,7 +147,7 @@
 										<a id="skill1">{{sk.attribute}}</a>
 										<a id="skill2">{{sk.name}}</a>
 										
-											<img class="valign-form edit-form" src=".\img\edit-button.png" ng-click="vm.editskills()" />	
+											<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editskills()" />	
 										
 										
 										<div class="valign-form border-form" ng-show="vm.show5===1"> 
@@ -161,7 +161,7 @@
                         <!--Education-->
                         <div class="background-section background-last-section">
                             <div class="valign-wrapper background-section-header">
-                                <img src=".\img\header-education.png" class="valign" />
+                                <img src="img/header-education.png" class="valign" />
                                 <h2 class="valign">Education</h2>
                             </div>
                            
@@ -170,7 +170,7 @@
 								<h3><small>{{edu.position}}</small></h3>
 								<h4><small>{{edu.time}}</small></h4>
 								
-								<img class="valign-form edit-form" src=".\img\edit-button.png" ng-click="vm.editeducation()" />
+								<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editeducation()" />
 					
 								<div class="valign-form border-form" ng-show="vm.show4===1"> 
 									<p class="valign-form">Education:</p>
@@ -186,6 +186,8 @@
 	
 	<!-- Script -->
 	<script src="scripts/angular.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
 	<script src="scripts/app.js"></script>
 	<script src="scripts/profile.module.js"></script>
 	<script src="scripts/profile.controller.js"></script>

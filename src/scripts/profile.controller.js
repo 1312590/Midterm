@@ -5,17 +5,27 @@
         .module('app.profile')
         .controller('ProfileController', ProfileController);
     
-    ProfileController.$inject = ['$http'];
-    function ProfileController($http) {
+    ProfileController.$inject = ['$scope', '$firebaseObject', '$firebaseArray'];
+    function ProfileController($scope, $firebaseObject, $firebaseArray) {
         var vm = this;
-        vm.isHide = true;
         vm.account = {};
-        vm.hide = hideFunction;
         vm.summary = null;
         vm.project = {};
         vm.experience = {};
         vm.skills = {};
         vm.education = {};
+        
+        var ref = new Firebase("https://linkedin-dack-1312590.firebaseio.com/");
+        var obj = $firebaseObject(ref);
+        
+        obj.$bindTo($scope, 'data').then(function (){
+           vm.account = $scope.data.account; 
+           vm.summary = $scope.data.summary;
+           vm.project = $scope.data.project;
+           vm.experience = $scope.data.experience;
+           vm.skills = $scope.data.skills;
+           vm.education = $scope.data.education;
+        });
         
         vm.editaccount = function (){
             if(vm.show===0)
@@ -51,21 +61,6 @@
             if(vm.show5===0)
             vm.show5 = 1;
             else vm.show5 = 0;
-        }
-            
-        activate();
-
-        ////////////////
-
-        function activate() { 
-            $http.get('data/data.json').then(function(response) {
-                vm.account = response.data.account;
-                vm.summary = response.data.summary;
-                vm.project = response.data.project;
-                vm.experience = response.data.experience;
-                vm.skills = response.data.skills;
-                vm.education = response.data.education;
-            });
         }
         
         function hideFunction() {

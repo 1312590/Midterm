@@ -1,0 +1,9 @@
+{
+  "firebase": "linkedin-dack-1312590",
+  "public": "src",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
