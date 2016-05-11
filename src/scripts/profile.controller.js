@@ -15,9 +15,11 @@
         vm.skills = {};
         vm.education = {};
         
-        var ref = new Firebase("https://linkedin-dack-1312590.firebaseio.com/");
+        //Link database được tạo trên firebase
+        var ref = new Firebase("https://linkedin-dack-1312590.firebaseio.com/"); 
         var obj = $firebaseObject(ref);
         
+        //Bind các dữ liệu ở các nguồn lại với nhau, khi cập nhật trên trang web thì thay đổi luôn cả data
         obj.$bindTo($scope, 'data').then(function (){
            vm.account = $scope.data.account; 
            vm.summary = $scope.data.summary;
