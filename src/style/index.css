@@ -1,4 +1,6 @@
+
 .profile{
+    clear: both;
     border: 1px solid black;
 }
 
@@ -113,4 +115,17 @@
 
 .container{
     border: 1px solid black;
+}
+
+.logbutton {
+    border: 1px solid black;
+    background-color:red;
+    padding: 3px;
+    cursor: pointer;
+    text-decoration: none !important;
+    
+}
+
+.logout_box {
+    float: right;
 }

@@ -9,17 +9,41 @@
 	<link rel="stylesheet" href="style/bootstrap.min.css">
 	<link rel="stylesheet" href="style/index.css">
 </head>
+
 <body ng-app="app" ng-controller="ProfileController as vm">
-	
+
+	<!-- Login Form -->
+	<section class="container" ng-show="!isLogin">
+		<div class="login">
+			<h1>Login to Web App</h1>
+			<form method="post" action="index.html">
+				<p><input type="text" name="login" value="" placeholder="Username or Email" ng-model="vm.user_email"></p>
+				<p><input type="password" name="password" value="" placeholder="Password" ng-model="vm.user_password"></p>
+			
+				<a class="logbutton" class="btn" ng-click="login()">Login</a>
+			</form>
+		</div>
+
+		<div class="login-help">
+			<p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p>
+		</div>
+	</section>
+
+	<!--Logout-->
+	<div class="logout_box" ng-show="isLogin">
+		<span>Welcome <strong>{{userdata.password.email}}</strong> | </span>
+		<a class="logbutton" ng-click="logout()">Logout</a>
+	</div>
+
 	<!-- ACCOUNT -->
-	<div class="container profile">
-		<div class="profile-overall" >
+	<div class="container profile" ng-show="isLogin">
+		<div class="profile-overall">
 			<div class="profile-overall-picture">
 				<img src="img/profilepic.jpg" alt="avatar">
-			</div>	
+			</div>
 			<div class="profile-overall-sumary">
 				<div class="profile-overall-sumery-content">
-					<h3 class="valign-form">{{vm.account.name}}</h3>				
+					<h3 class="valign-form">{{vm.account.name}}</h3>
 					<h3><small>{{vm.account.position}} at {{vm.account.company}}</small></h3>
 					<h4><small>{{vm.account.nation}} | {{vm.account.job}}</small></h4>
 					<table id="tableacc">
@@ -28,168 +52,170 @@
 							<td>{{vm.account.current}}</td>
 						</tr>
 						<tr>
-							<td>Previous </td>						
-							<td>{{vm.account.previous}}</td>	
+							<td>Previous </td>
+							<td>{{vm.account.previous}}</td>
 						</tr>
 						<tr>
 							<td>Education </td>
 							<td>{{vm.account.education}}</td>
 						</tr>
 					</table>
-					
+
 					<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editaccount()" />
-								
-								<div class="valign-form border-form position" ng-show="vm.show===1"> 
-									<p class="valign-form">Account:</p>
-									<input class="input-form" ng-model="vm.account.name"/>
-									<input class="input-form" ng-model="vm.account.position"/>
-									<input class="input-form" ng-model="vm.account.company"/>
-									<input class="input-form" ng-model="vm.account.nation"/>
-									<input class="input-form" ng-model="vm.account.job"/>
-									<input class="input-form" ng-model="vm.account.current"/>
-									<input class="input-form" ng-model="vm.account.previous"/>
-									<input class="input-form" ng-model="vm.account.education"/>
-								</div>
+
+					<div class="valign-form border-form position" ng-show="vm.show===1">
+						<p class="valign-form">Account:</p>
+						<input class="input-form" ng-model="vm.account.name" />
+						<input class="input-form" ng-model="vm.account.position" />
+						<input class="input-form" ng-model="vm.account.company" />
+						<input class="input-form" ng-model="vm.account.nation" />
+						<input class="input-form" ng-model="vm.account.job" />
+						<input class="input-form" ng-model="vm.account.current" />
+						<input class="input-form" ng-model="vm.account.previous" />
+						<input class="input-form" ng-model="vm.account.education" />
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- BACKGROUND -->
-	<div class="row">
-            <div id="profile" class="container">
-				
-                <!--Background-->
-                <div class="card-body">
-                    <h1 class="card-title">Background</h1>
-                    <div id="background-content" class="card-content">
-						
-                        <!--Summary-->
-                        <div class="background-section">
-                            <div class="valign-wrapper background-section-header">
-                                <img src="img/header-summary.png" class="valign" />
-                                <h2 class="valign">Summary</h2>
-                            </div>
-							
-                            <p class="description valign-form">{{vm.summary}}</p>
-							
-							<img class="valign-form edit-form"  src="img/edit-button.png" ng-click="vm.editsummary()" />
-					
-							<div class="valign-form border-form" ng-show="vm.show1===1"> 
-								<p class="valign-form">Summary:</p>
-								<input class="valign-form input-form" ng-model="vm.summary"/>
+		<!-- BACKGROUND -->
+		<div class="row" ng-show="isLogin">
+			<div id="profile" class="container">
+
+				<!--Background-->
+				<div class="card-body">
+					<h1 class="card-title">Background</h1>
+					<div id="background-content" class="card-content">
+
+						<!--Summary-->
+						<div class="background-section">
+							<div class="valign-wrapper background-section-header">
+								<img src="img/header-summary.png" class="valign" />
+								<h2 class="valign">Summary</h2>
 							</div>
-                        </div>
-						
+
+							<p class="description valign-form">{{vm.summary}}</p>
+
+							<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editsummary()" />
+
+							<div class="valign-form border-form" ng-show="vm.show1===1">
+								<p class="valign-form">Summary:</p>
+								<input class="valign-form input-form" ng-model="vm.summary" />
+							</div>
+						</div>
+
 						<!--Project-->
-						 <div class="background-section">
-                            <div class="valign-wrapper background-section-header">
-                                <img src="img/Project.png" class="valign" />
-                                <h2 class="valign">Project</h2>
-                            </div>
-							
+						<div class="background-section">
+							<div class="valign-wrapper background-section-header">
+								<img src="img/Project.png" class="valign" />
+								<h2 class="valign">Project</h2>
+							</div>
+
 							<div class="profile-overall-sumery-content" ng-repeat="pro in vm.project">
 								<h3>{{pro.name}}</h3>
 								<h3><small>{{pro.school}}</small></h3>
 								<h4><small>{{pro.time}} ({{pro.duration}}) </small></h4>
 								<p>{{pro.description}}</p>
-								
-								<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editproject()" />
-								
-								<div class="valign-form border-form" ng-show="vm.show2===1"> 
-									<p class="valign-form">Project:</p>
-									<input class="input-form" ng-model="pro.name"/>
-									<input class="input-form" ng-model="pro.school"/>
-									<input class="input-form" ng-model="pro.time"/>
-									<input class="input-form" ng-model="pro.duration"/>
-									<input class="input-form" ng-model="pro.description"/>
 
-						
+								<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editproject()" />
+
+								<div class="valign-form border-form" ng-show="vm.show2===1">
+									<p class="valign-form">Project:</p>
+									<input class="input-form" ng-model="pro.name" />
+									<input class="input-form" ng-model="pro.school" />
+									<input class="input-form" ng-model="pro.time" />
+									<input class="input-form" ng-model="pro.duration" />
+									<input class="input-form" ng-model="pro.description" />
+
+
 								</div>
-	
+
 							</div>
-							
-                        <!--Experience-->
-                        <div class="background-section">
-                            <div class="valign-wrapper background-section-header">
-                                <img src="img/header-experience.png" class="valign" />
-                                <h2 class="valign">Experience</h2>
-                            </div>
-							
-							<div class="profile-overall-sumery-content" ng-repeat="exp in vm.experience">
-								<h3>{{exp.position}}</h3>
-								<h3><small>{{exp.company}}</small></h3>
-								<h4><small>{{exp.time}} ({{exp.duration}}) | {{exp.location}}</small></h4>
-								<p>{{exp.description}}</p>
-								
-								<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editexperience()" />
-					
-							<div class="valign-form border-form" ng-show="vm.show3===1"> 
-								<p class="valign-form">Experience:</p>
-								<input class="input-form" ng-model="exp.position"/>
-								<input class="input-form" ng-model="exp.company"/>
-								<input class="input-form" ng-model="exp.time"/>
-								<input class="input-form" ng-model="exp.duration"/>
-								<input class="input-form" ng-model="exp.location"/>
-								<input class="input-form" ng-model="exp.description"/>								
-							</div>
-                 		
-				 			
-                        </div>
-                        <!--Skills-->
-                        <div class="background-section">
-                            <div class="valign-wrapper background-section-header">
-                                <img src="img/header-skill.png" class="valign" />
-                                <h2 class="valign">Skills</h2>
-                            </div>
-                            <div id="skills-section">
-                                <div>
-                                    <h5>Top Skills</h5>
-									<div ng-repeat="sk in vm.skills">
-										<a id="skill1">{{sk.attribute}}</a>
-										<a id="skill2">{{sk.name}}</a>
-										
-											<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editskills()" />	
-										
-										
-										<div class="valign-form border-form" ng-show="vm.show5===1"> 
-											<p class="valign-form">Skills:</p>
-											<input class="input-form" ng-model="sk.attribute"/>
-											<input class="input-form" ng-model="sk.name"/>
+
+							<!--Experience-->
+							<div class="background-section">
+								<div class="valign-wrapper background-section-header">
+									<img src="img/header-experience.png" class="valign" />
+									<h2 class="valign">Experience</h2>
+								</div>
+
+								<div class="profile-overall-sumery-content" ng-repeat="exp in vm.experience">
+									<h3>{{exp.position}}</h3>
+									<h3><small>{{exp.company}}</small></h3>
+									<h4><small>{{exp.time}} ({{exp.duration}}) | {{exp.location}}</small></h4>
+									<p>{{exp.description}}</p>
+
+									<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editexperience()" />
+
+									<div class="valign-form border-form" ng-show="vm.show3===1">
+										<p class="valign-form">Experience:</p>
+										<input class="input-form" ng-model="exp.position" />
+										<input class="input-form" ng-model="exp.company" />
+										<input class="input-form" ng-model="exp.time" />
+										<input class="input-form" ng-model="exp.duration" />
+										<input class="input-form" ng-model="exp.location" />
+										<input class="input-form" ng-model="exp.description" />
+									</div>
+
+
+								</div>
+								<!--Skills-->
+								<div class="background-section">
+									<div class="valign-wrapper background-section-header">
+										<img src="img/header-skill.png" class="valign" />
+										<h2 class="valign">Skills</h2>
+									</div>
+									<div id="skills-section">
+										<div>
+											<h5>Top Skills</h5>
+											<div ng-repeat="sk in vm.skills">
+												<a id="skill1">{{sk.attribute}}</a>
+												<a id="skill2">{{sk.name}}</a>
+
+												<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editskills()" />
+
+
+												<div class="valign-form border-form" ng-show="vm.show5===1">
+													<p class="valign-form">Skills:</p>
+													<input class="input-form" ng-model="sk.attribute" />
+													<input class="input-form" ng-model="sk.name" />
+												</div>
+											</div>
 										</div>
-							  		</div>
-                            	</div>
-                       		</div>
-                        <!--Education-->
-                        <div class="background-section background-last-section">
-                            <div class="valign-wrapper background-section-header">
-                                <img src="img/header-education.png" class="valign" />
-                                <h2 class="valign">Education</h2>
-                            </div>
-                           
-						   <div class="profile-overall-sumery-content" ng-repeat="edu in vm.education">
-							  	<h3>{{edu.school}}</h3>
-								<h3><small>{{edu.position}}</small></h3>
-								<h4><small>{{edu.time}}</small></h4>
-								
-								<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editeducation()" />
-					
-								<div class="valign-form border-form" ng-show="vm.show4===1"> 
-									<p class="valign-form">Education:</p>
-									<input class="input-form" ng-model="edu.school"/>
-									<input class="input-form" ng-model="edu.position"/>
-									<input class="input-form" ng-model="edu.time"/>			
+									</div>
+									<!--Education-->
+									<div class="background-section background-last-section">
+										<div class="valign-wrapper background-section-header">
+											<img src="img/header-education.png" class="valign" />
+											<h2 class="valign">Education</h2>
+										</div>
+
+										<div class="profile-overall-sumery-content" ng-repeat="edu in vm.education">
+											<h3>{{edu.school}}</h3>
+											<h3><small>{{edu.position}}</small></h3>
+											<h4><small>{{edu.time}}</small></h4>
+
+											<img class="valign-form edit-form" src="img/edit-button.png" ng-click="vm.editeducation()" />
+
+											<div class="valign-form border-form" ng-show="vm.show4===1">
+												<p class="valign-form">Education:</p>
+												<input class="input-form" ng-model="edu.school" />
+												<input class="input-form" ng-model="edu.position" />
+												<input class="input-form" ng-model="edu.time" />
+											</div>
+										</div>
+									</div>
 								</div>
-                        	</div>
-                   		</div>
-                </div>
-            </div>
-        </div>
-	
-	<!-- Script -->
-	<script src="scripts/angular.min.js"></script>
-	<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
-	<script src="scripts/app.js"></script>
-	<script src="scripts/profile.module.js"></script>
-	<script src="scripts/profile.controller.js"></script>
+							</div>
+						</div>
+
+
+						<!-- Script -->
+						<script src="scripts/angular.min.js"></script>
+						<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+						<script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+						<script src="scripts/app.js"></script>
+						<script src="scripts/profile.module.js"></script>
+						<script src="scripts/profile.controller.js"></script>
 </body>
+
 </html>
